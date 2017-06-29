@@ -23,7 +23,7 @@ def getColour(year, i, m, data):
 
 maxYear = 2018
 minYear = 1985
-json_data = open('data.json').read()
+json_data = open('canada.json').read()
 data = json.loads(json_data)
 norm = mpl.colors.Normalize(vmin=0, vmax=getMaxBracket(minYear, maxYear, data))
 cmap = truncate_colormap(cmocean.cm.phase, 0.35, 1)
@@ -46,7 +46,7 @@ medium = 11
 large = 12
 
 clb = plt.colorbar(m, format='>$%d', ticks=[a for a in range(0, getMaxBracket(minYear, maxYear, data), 10000)])
-clb.set_label('Taxable Bracket (CAD):', labelpad=-40, y=1.1, rotation=0, fontsize=large)
+clb.set_label('Tax Bracket (CAD):', labelpad=-40, y=1.06, rotation=0, fontsize=large)
 clb.ax.tick_params(labelsize=medium)
 plt.xlim([0, maxYear-minYear])
 plt.title('% Personal Income Federally Taxed in Canada, 1985-2017', fontsize=large)
@@ -58,6 +58,7 @@ plt.gca().xaxis.grid(which='major', linestyle='-', linewidth=0.5)
 plt.gca().yaxis.grid(which='minor', linestyle='-', linewidth=0)
 plt.gca().xaxis.grid(False, which='minor')
 plt.gca().tick_params(axis='x', which='both', length=0)
-plt.xlabel("github.com/rosslh/canada-tax-vis")
+
+plt.xlabel("github.com/rosslh/historical-tax-rate-visualizor", fontsize=small, color='#777777')
 plt.minorticks_on()
 plt.savefig('figure.png', dpi=400)
