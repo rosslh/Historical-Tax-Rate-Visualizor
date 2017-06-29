@@ -2,4 +2,4 @@
 
 
 ## Example Output
-<img src="https://raw.githubusercontent.com/rosslh/Historical-Tax-Rate-Visualizor/master/figure.png" width="100%">
+<img src="https://raw.githubusercontent.com/rosslh/Historical-Tax-Rate-Visualizor/master/figure.png" width="70%">
